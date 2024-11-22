@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tombola Multiplayer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Tombola Multiplayer</h1>
+
+    <!-- Schermata Home -->
+    <div id="homeScreen">
+        <input type="text" id="roomCode" placeholder="Codice stanza">
+        <button onclick="createRoom()">Crea Stanza</button>
+        <button onclick="joinRoom()">Unisciti alla Stanza</button>
+    </div>
+
+    <!-- Schermata Gameplay (Tombolone o Cartella) -->
+    <div id="gameScreen" style="display: none;">
+        <div id="tombolone" class="grid"></div>
+        <div id="cartella" class="grid"></div>
+        <div id="hostControls" style="display: none;">
+            <button id="estraiBtn" onclick="estraiNumero()">Estrai Numero</button>
+        </div>
+        <button id="endGameBtn" onclick="endGame()" style="display: none;">Torna alla Home</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
